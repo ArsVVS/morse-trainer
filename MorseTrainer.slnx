@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MorseTrainer.Cli/MorseTrainer.Cli.csproj" />
+    <Project Path="src/MorseTrainer.Core/MorseTrainer.Core.csproj" />
+    <Project Path="src/MorseTrainer.Wpf/MorseTrainer.Wpf.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/MorseTrainer.Core.Tests/MorseTrainer.Core.Tests.csproj" />
+  </Folder>
+</Solution>
