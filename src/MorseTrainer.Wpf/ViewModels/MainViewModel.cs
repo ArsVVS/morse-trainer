@@ -11,7 +11,9 @@ public partial class MainViewModel : ObservableObject
     {
         Settings = new SettingsViewModel(settings);
         Player = new MorsePlayer();
+        Store = new StatisticsStore();
         Translator = new TranslatorViewModel(Settings, Player);
+        Trainer = new TrainerViewModel(Settings, Player, Store);
         Reference = new ReferenceViewModel(Settings, Player);
     }
 
@@ -19,7 +21,11 @@ public partial class MainViewModel : ObservableObject
 
     public MorsePlayer Player { get; }
 
+    public StatisticsStore Store { get; }
+
     public TranslatorViewModel Translator { get; }
+
+    public TrainerViewModel Trainer { get; }
 
     public ReferenceViewModel Reference { get; }
 
