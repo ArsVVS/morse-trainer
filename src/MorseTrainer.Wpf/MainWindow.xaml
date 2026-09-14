@@ -5,15 +5,24 @@
         Title="Азбука Морзе – тренажёр" Width="1100" Height="760" MinWidth="900" MinHeight="600"
         WindowStartupLocation="CenterScreen"
         PreviewKeyDown="OnPreviewKeyDown" PreviewKeyUp="OnPreviewKeyUp">
-    <TabControl SelectedIndex="{Binding SelectedTab}" Margin="6">
-        <TabItem Header="Переводчик">
-            <views:TranslatorView DataContext="{Binding Translator}" />
-        </TabItem>
-        <TabItem Header="Тренажёр">
-            <views:TrainerView DataContext="{Binding Trainer}" />
-        </TabItem>
-        <TabItem Header="Справочник">
-            <views:ReferenceView DataContext="{Binding Reference}" />
-        </TabItem>
-    </TabControl>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Настройки" Click="OnSettingsClick" />
+        </Menu>
+
+        <TabControl SelectedIndex="{Binding SelectedTab}" Margin="6">
+            <TabItem Header="Переводчик">
+                <views:TranslatorView DataContext="{Binding Translator}" />
+            </TabItem>
+            <TabItem Header="Тренажёр">
+                <views:TrainerView DataContext="{Binding Trainer}" />
+            </TabItem>
+            <TabItem Header="Статистика">
+                <views:StatisticsView DataContext="{Binding Statistics}" />
+            </TabItem>
+            <TabItem Header="Справочник">
+                <views:ReferenceView DataContext="{Binding Reference}" />
+            </TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>

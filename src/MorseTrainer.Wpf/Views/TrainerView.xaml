@@ -139,7 +139,8 @@
                            Opacity="0.7" Margin="0,4,0,0"
                            Visibility="{Binding IsKeyMode, Converter={StaticResource BoolToVisibility}}" />
 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,14,0,0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,14,0,0"
+                            Visibility="{Binding IsRunning, Converter={StaticResource BoolToVisibility}}">
                     <Button Content="Ответить (Enter)" Margin="0,0,8,0" IsDefault="True" Focusable="False"
                             Command="{Binding SubmitCommand}" />
                     <Button Content="Повторить (Ctrl+R)" Focusable="False" Command="{Binding RepeatCommand}"

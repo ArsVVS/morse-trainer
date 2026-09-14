@@ -13,6 +13,12 @@ public partial class MainWindow : Window
 
     private MainViewModel ViewModel => (MainViewModel)DataContext;
 
+    private void OnSettingsClick(object sender, RoutedEventArgs e)
+    {
+        var window = new SettingsWindow { Owner = this, DataContext = ViewModel.Settings };
+        window.ShowDialog();
+    }
+
     // Пробел работает как телеграфный ключ в режиме передачи
     private void OnPreviewKeyDown(object sender, KeyEventArgs e)
     {

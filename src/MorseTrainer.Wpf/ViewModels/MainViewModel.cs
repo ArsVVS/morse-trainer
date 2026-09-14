@@ -14,7 +14,11 @@ public partial class MainViewModel : ObservableObject
         Store = new StatisticsStore();
         Translator = new TranslatorViewModel(Settings, Player);
         Trainer = new TrainerViewModel(Settings, Player, Store);
+        Statistics = new StatisticsViewModel(Settings, Store);
         Reference = new ReferenceViewModel(Settings, Player);
+
+        // После тренировки обновляем вкладку статистики
+        Trainer.SessionSaved += (_, _) => Statistics.Refresh();
     }
 
     public SettingsViewModel Settings { get; }
@@ -26,6 +30,8 @@ public partial class MainViewModel : ObservableObject
     public TranslatorViewModel Translator { get; }
 
     public TrainerViewModel Trainer { get; }
+
+    public StatisticsViewModel Statistics { get; }
 
     public ReferenceViewModel Reference { get; }
 
