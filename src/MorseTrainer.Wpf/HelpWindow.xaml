@@ -1,0 +1,53 @@
+<Window x:Class="MorseTrainer.Wpf.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Справка" Width="640" Height="620" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+    <DockPanel Margin="16">
+        <Button DockPanel.Dock="Bottom" Content="Закрыть" HorizontalAlignment="Right" Width="110" Margin="0,12,0,0"
+                IsCancel="True" IsDefault="True" Click="OnClose" />
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock Text="Азбука Морзе – тренажёр" FontSize="20" FontWeight="SemiBold" />
+                <TextBlock TextWrapping="Wrap" Margin="0,6,0,12"
+                           Text="Переводчик превращает текст в код Морзе и обратно и показывает его картинкой, миганием лампы и звуком. Тренажёр учит приёму и передаче по методу Коха: начинаете с двух букв и добавляете по одной, когда точность достигает 90%." />
+
+                <TextBlock Text="Горячие клавиши" FontSize="16" FontWeight="SemiBold" Margin="0,0,0,6" />
+                <TextBlock FontFamily="Consolas" FontSize="13" xml:space="preserve">F1              эта справка
+Ctrl+1 … Ctrl+4 переключение вкладок
+Ctrl+Enter      воспроизвести (звук и свет)
+Esc             остановить воспроизведение
+Ctrl+S          сохранить WAV (переводчик)
+Ctrl+R          повторить задание (приём)
+Enter           отправить ответ (тренажёр)
+Пробел          ключ (передача, режим ключа)
+Ctrl+↑ / Ctrl+↓ скорость +1 / –1 WPM</TextBlock>
+
+                <TextBlock Text="Ключ пробелом" FontSize="16" FontWeight="SemiBold" Margin="0,14,0,6" />
+                <TextBlock TextWrapping="Wrap"
+                           Text="Короткое нажатие (меньше двух точек) – точка, длинное – тире. Пауза в три точки заканчивает букву, в семь точек – слово. Длина точки зависит от выбранной скорости." />
+
+                <TextBlock Text="Консольная версия (morse.exe)" FontSize="16" FontWeight="SemiBold" Margin="0,14,0,6" />
+                <TextBlock FontFamily="Consolas" FontSize="13" xml:space="preserve">morse encode "SOS help"                  текст → код
+morse decode "... --- ... / .... ."      код → текст
+morse encode "привет" --alphabet cyr
+morse encode "CQ CQ" --wav cq.wav [--wpm 20] [--freq 700]
+morse encode "CQ CQ" --svg cq.svg
+morse play "SOS" [--wpm 15]              проиграть звук
+morse train --mode receive [--level 3] [--count 10]
+morse train --mode send [--level 3] [--count 10]
+morse stats                              краткая статистика
+morse --help
+
+Параметры:
+  --alphabet lat|cyr   алфавит для расшифровки и подписей
+  --wpm 5..40          скорость
+  --freq 400..1000     частота тона, Гц
+  --strict             код 2, если есть неизвестные символы
+
+Коды возврата: 0 – успех, 1 – ошибка аргументов,
+2 – ошибка ввода или файла.</TextBlock>
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

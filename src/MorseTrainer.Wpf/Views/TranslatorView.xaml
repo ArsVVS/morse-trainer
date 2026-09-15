@@ -109,6 +109,8 @@
                 </Grid.RowDefinitions>
 
                 <GroupBox Header="Мерцание">
+                    <!-- Viewbox уменьшает лампу, если окно низкое -->
+                    <Viewbox MaxWidth="150" MaxHeight="150">
                     <Ellipse Width="150" Height="150" Stroke="Gray" StrokeThickness="2">
                         <Ellipse.Style>
                             <Style TargetType="Ellipse">
@@ -121,6 +123,7 @@
                             </Style>
                         </Ellipse.Style>
                     </Ellipse>
+                    </Viewbox>
                 </GroupBox>
 
                 <GroupBox Grid.Row="1" Header="Звук" Margin="0,8,0,0">

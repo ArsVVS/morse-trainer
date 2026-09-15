@@ -8,6 +8,7 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Настройки" Click="OnSettingsClick" />
+            <MenuItem Header="Справка (F1)" Click="OnHelpClick" />
         </Menu>
 
         <TabControl SelectedIndex="{Binding SelectedTab}" Margin="6">
